@@ -110,6 +110,27 @@ class CalculatorTest {
         assertEquals(expected, actual);
 
     }
+    @Test
+    @DisplayName("Soll zwei Zahlen miteinander Multiplizieren")
+    void testMultiplizieren(){
 
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(1);
+        calc.pressDigitKey(0);
+        calc.pressBinaryOperationKey("+");
+        calc.pressDigitKey(1);
+        calc.pressDigitKey(0);
+        calc.pressBinaryOperationKey("+");
+        calc.pressDigitKey(1);
+        calc.pressDigitKey(0);
+        calc.pressEqualsKey();
+
+        String expected = "30";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+
+    }
 }
 
