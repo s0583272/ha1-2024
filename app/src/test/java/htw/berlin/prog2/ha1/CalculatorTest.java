@@ -132,5 +132,21 @@ class CalculatorTest {
         assertEquals(expected, actual);
 
     }
+    @Test
+    @DisplayName("Test Mehrstellige Ziffern eingeben können")
+        // Calulator Zeile 32 entfernen so funktioniert test
+    void test(){
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(10);
+        calc.pressBinaryOperationKey("+");
+        calc.pressDigitKey(10);
+        calc.pressEqualsKey();
+
+        String expected = "20";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
 }
 
