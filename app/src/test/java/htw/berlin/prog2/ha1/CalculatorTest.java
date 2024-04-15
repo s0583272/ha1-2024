@@ -148,5 +148,27 @@ class CalculatorTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    @DisplayName("Diese funktion soll die Wurzel ziehen")
+    void Test(){
+
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(1);
+        calc.pressDigitKey(6);
+        calc.pressUnaryOperationKey("√");
+
+        String expected = "4";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+
+    }
+
+
+
+
+
 }
 
